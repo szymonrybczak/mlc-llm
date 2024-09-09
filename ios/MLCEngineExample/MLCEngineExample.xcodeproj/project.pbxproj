@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACBF1F3A2C2ED60700DF3BC9 /* MLCSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACBF1F392C2ED60700DF3BC9 /* MLCSwift */; };
+		ACBF1F3C2C2ED6E700DF3BC9 /* MLCSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACBF1F3B2C2ED6E700DF3BC9 /* MLCSwift */; };
 		C04105DF2BEBC61B005A434D /* MLCSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C04105DE2BEBC61B005A434D /* MLCSwift */; };
 		C07094522BEBC6C4005C29FC /* bundle in Copy Files */ = {isa = PBXBuildFile; fileRef = C07094512BEBC6C4005C29FC /* bundle */; };
 		C0B37B892BE8226A00B2F80B /* MLCEngineExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B37B882BE8226A00B2F80B /* MLCEngineExampleApp.swift */; };
@@ -46,7 +48,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B37B982BE8234D00B2F80B /* MLCSwift in Frameworks */,
+				ACBF1F3C2C2ED6E700DF3BC9 /* MLCSwift in Frameworks */,
 				C04105DF2BEBC61B005A434D /* MLCSwift in Frameworks */,
+				ACBF1F3A2C2ED60700DF3BC9 /* MLCSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +114,8 @@
 			packageProductDependencies = (
 				C0B37B972BE8234D00B2F80B /* MLCSwift */,
 				C04105DE2BEBC61B005A434D /* MLCSwift */,
+				ACBF1F392C2ED60700DF3BC9 /* MLCSwift */,
+				ACBF1F3B2C2ED6E700DF3BC9 /* MLCSwift */,
 			);
 			productName = MLCEngineExample;
 			productReference = C0B37B852BE8226A00B2F80B /* MLCEngineExample.app */;
@@ -140,7 +146,7 @@
 			);
 			mainGroup = C0B37B7C2BE8226A00B2F80B;
 			packageReferences = (
-				C0B37B962BE8234D00B2F80B /* XCLocalSwiftPackageReference "../MLCSwift" */,
+				ACBF1F382C2ED60700DF3BC9 /* XCLocalSwiftPackageReference "../MLCSwift" */,
 			);
 			productRefGroup = C0B37B862BE8226A00B2F80B /* Products */;
 			projectDirPath = "";
@@ -301,10 +307,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MLCEngineExample/MLCEngineExample.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLCEngineExample/Preview Content\"";
-				DEVELOPMENT_TEAM = 3FR42MXLK9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZK8L4ATDPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -328,8 +337,10 @@
 					"-lsentencepiece",
 					"-ltokenizers_c",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mlc.MLCEngineExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szymonrybczak.aimlc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ai2;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,10 +353,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MLCEngineExample/MLCEngineExample.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLCEngineExample/Preview Content\"";
-				DEVELOPMENT_TEAM = 3FR42MXLK9;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZK8L4ATDPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,8 +383,10 @@
 					"-lsentencepiece",
 					"-ltokenizers_c",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mlc.MLCEngineExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szymonrybczak.aimlc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ai2;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,13 +417,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		C0B37B962BE8234D00B2F80B /* XCLocalSwiftPackageReference "../MLCSwift" */ = {
+		ACBF1F382C2ED60700DF3BC9 /* XCLocalSwiftPackageReference "../MLCSwift" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../MLCSwift;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ACBF1F392C2ED60700DF3BC9 /* MLCSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MLCSwift;
+		};
+		ACBF1F3B2C2ED6E700DF3BC9 /* MLCSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MLCSwift;
+		};
 		C04105DE2BEBC61B005A434D /* MLCSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MLCSwift;

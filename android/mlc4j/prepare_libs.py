@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+import platform
 
 from mlc_llm.support import logging
 
@@ -25,13 +26,27 @@ def run_cmake(mlc4j_path: Path):
     android_ndk_path = (
         Path(os.environ["ANDROID_NDK"]) / "build" / "cmake" / "android.toolchain.cmake"
     )
+
     cmd = [
         "cmake",
         str(mlc4j_path),
         "-DCMAKE_BUILD_TYPE=Release",
         f"-DCMAKE_TOOLCHAIN_FILE={str(android_ndk_path)}",
         "-DCMAKE_INSTALL_PREFIX=.",
-        '-DCMAKE_CXX_FLAGS="-O3"',
+        '-DCMAKE_CXX_FLAGS="-O3"'
+    ]
+
+    # For MacOS, append these options:
+    if platform.system() == "Darwin": 
+        cmd.extend([
+            "-DCMAKE_THREAD_LIBS_INIT=-stdlib=libc++",  # Use libc++ instead of lpthread
+            "-DCMAKE_HAVE_THREADS_LIBRARY=1",
+            "-DCMAKE_USE_WIN32_THREADS_INIT=0",
+            "-DCMAKE_USE_PTHREADS_INIT=1", 
+            "-DTHREADS_PREFER_PTHREAD_FLAG=ON",
+        ])
+
+    cmd.extend([
         "-DANDROID_ABI=arm64-v8a",
         "-DANDROID_NATIVE_API_LEVEL=android-24",
         "-DANDROID_PLATFORM=android-24",
@@ -43,7 +58,7 @@ def run_cmake(mlc4j_path: Path):
         "-DUSE_OPENCL=ON",
         "-DUSE_OPENCL_ENABLE_HOST_PTR=ON",
         "-DUSE_CUSTOM_LOGGING=ON",
-    ]
+    ])
 
     if sys.platform == "win32":
         logger.info("Using ninja in windows, make sure you installed ninja in conda")

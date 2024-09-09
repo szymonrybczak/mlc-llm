@@ -56,6 +56,16 @@
 		1453A4CD2A1354B9001B909F /* ModelConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelConfig.swift; sourceTree = "<group>"; };
 		1453A4CE2A1354B9001B909F /* ModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelState.swift; sourceTree = "<group>"; };
 		A773CC642A5DC98200467BFE /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		AC85E3C82C4AF1EA00772ABE /* libtokenizers_cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtokenizers_cpp.a; path = "../../../react-native-ai/example/ios/dist/lib/libtokenizers_cpp.a"; sourceTree = "<group>"; };
+		AC85E3C92C4AF1EA00772ABE /* model_iphone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = model_iphone.a; path = "../../../react-native-ai/example/ios/dist/lib/model_iphone.a"; sourceTree = "<group>"; };
+		AC85E3CA2C4AF1EA00772ABE /* sentencepiece.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = sentencepiece.a; path = "../../../react-native-ai/example/ios/dist/lib/sentencepiece.a"; sourceTree = "<group>"; };
+		AC85E3CB2C4AF1EA00772ABE /* libtokenizers_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtokenizers_c.a; path = "../../../react-native-ai/example/ios/dist/lib/libtokenizers_c.a"; sourceTree = "<group>"; };
+		AC85E3CC2C4AF1EA00772ABE /* tokenizers_cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = tokenizers_cpp.a; path = "../../../react-native-ai/example/ios/dist/lib/tokenizers_cpp.a"; sourceTree = "<group>"; };
+		AC85E3CD2C4AF1EA00772ABE /* mlc_llm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = mlc_llm.a; path = "../../../react-native-ai/example/ios/dist/lib/mlc_llm.a"; sourceTree = "<group>"; };
+		AC85E3CE2C4AF1EA00772ABE /* tokenizers_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = tokenizers_c.a; path = "../../../react-native-ai/example/ios/dist/lib/tokenizers_c.a"; sourceTree = "<group>"; };
+		AC85E3CF2C4AF1EA00772ABE /* libtvm_runtime.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtvm_runtime.a; path = "../../../react-native-ai/example/ios/dist/lib/libtvm_runtime.a"; sourceTree = "<group>"; };
+		AC85E3D02C4AF1EA00772ABE /* libsentencepiece.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsentencepiece.a; path = "../../../react-native-ai/example/ios/dist/lib/libsentencepiece.a"; sourceTree = "<group>"; };
+		AC85E3D12C4AF1EA00772ABE /* libmlc_llm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmlc_llm.a; path = "../../../react-native-ai/example/ios/dist/lib/libmlc_llm.a"; sourceTree = "<group>"; };
 		AEC27EF92A85C2AC00254E67 /* ParamsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsConfig.swift; sourceTree = "<group>"; };
 		AEC27EFB2A85C3B000254E67 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		AEC27F012A86337E00254E67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -168,6 +178,16 @@
 		C0D643C929F99BDA004DDAA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC85E3D12C4AF1EA00772ABE /* libmlc_llm.a */,
+				AC85E3D02C4AF1EA00772ABE /* libsentencepiece.a */,
+				AC85E3CB2C4AF1EA00772ABE /* libtokenizers_c.a */,
+				AC85E3C82C4AF1EA00772ABE /* libtokenizers_cpp.a */,
+				AC85E3CF2C4AF1EA00772ABE /* libtvm_runtime.a */,
+				AC85E3CD2C4AF1EA00772ABE /* mlc_llm.a */,
+				AC85E3C92C4AF1EA00772ABE /* model_iphone.a */,
+				AC85E3CA2C4AF1EA00772ABE /* sentencepiece.a */,
+				AC85E3CE2C4AF1EA00772ABE /* tokenizers_c.a */,
+				AC85E3CC2C4AF1EA00772ABE /* tokenizers_cpp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -403,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLCChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 3FR42MXLK9;
+				DEVELOPMENT_TEAM = ZK8L4ATDPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -420,10 +440,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/dist/lib",
-				);
 				MARKETING_VERSION = 1.3;
 				OTHER_LDFLAGS = (
 					"-Wl,-all_load",
@@ -434,7 +450,7 @@
 					"-lsentencepiece",
 					"-ltokenizers_c",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mlc.Chat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szymonrybczak.aimlc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -456,7 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MLCChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 3FR42MXLK9;
+				DEVELOPMENT_TEAM = ZK8L4ATDPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -473,10 +489,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/dist/lib",
-				);
 				MARKETING_VERSION = 1.3;
 				OTHER_LDFLAGS = (
 					"-Wl,-all_load",
@@ -487,7 +499,7 @@
 					"-lsentencepiece",
 					"-ltokenizers_c",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mlc.Chat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.szymonrybczak.aimlc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

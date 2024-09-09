@@ -36,6 +36,11 @@ using namespace tvm::runtime;
   if (self = [super init]) {
     // load chat module
     const PackedFunc* f_json_ffi_create = Registry::Get("mlc.json_ffi.CreateJSONFFIEngine");
+      NSLog(@"Listing all available functions in the global TVM registry:");
+      for (const auto& kv : ::tvm::runtime::Registry::ListNames()) {
+          NSLog(@"Function: %s", kv.c_str());
+      }
+      
     ICHECK(f_json_ffi_create) << "Cannot find mlc.json_ffi.CreateJSONFFIEngine";
     json_ffi_engine_ = (*f_json_ffi_create)();
     init_background_engine_func_ = json_ffi_engine_->GetFunction("init_background_engine");
